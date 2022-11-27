@@ -31,11 +31,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  #to implement bloc pattern 
+  flutter_bloc: ^8.1.1
+  # To Http requests
+  http: ^0.13.5
+  #To load a web page
+  webviewx: ^0.2.1
 
 dev_dependencies:
   flutter_test:
