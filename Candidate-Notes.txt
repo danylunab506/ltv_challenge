@@ -1,0 +1,6 @@
+
+
+Bibliographic References:
+https://blog.logrocket.com/google-maps-flutter/
+https://pub.dev/packages/google_maps_flutter
+https://medium.com/@fernnandoptr/how-to-get-users-current-location-address-in-flutter-geolocator-geocoding-be563ad6f66a

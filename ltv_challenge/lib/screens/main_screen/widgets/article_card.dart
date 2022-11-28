@@ -117,11 +117,6 @@ class ArticleCard extends StatelessWidget {
                     ),
                   )
                 )
-    
-                // Text("${article.title}"),
-                // Text( "${article.author}"),
-                // Text("${article.articleDate}"),
-                // Text("${article.description}"),
               ],
             )
           ),

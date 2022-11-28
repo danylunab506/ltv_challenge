@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'widgets/articles_list.dart';
+import 'widgets/map_widget.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -40,7 +41,7 @@ class _MainScreenState extends State<MainScreen> {
           body: const TabBarView(
             children: [
               ArticlesList(),
-              Icon(Icons.map_sharp),
+              MapWidget(),
             ],
           ),
         ),

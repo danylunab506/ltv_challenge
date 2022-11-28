@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ltv_challenge/screens/main_screen/bloc/articles_bloc.dart';
+import 'package:ltv_challenge/screens/main_screen/bloc/articles_bloc/articles_bloc.dart';
 import 'package:ltv_challenge/screens/main_screen/models/articles_list_model.dart';
 
 import 'article_card.dart';
