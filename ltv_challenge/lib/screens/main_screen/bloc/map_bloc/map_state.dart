@@ -18,15 +18,6 @@ class DefaultPositionLoaded extends MapState {
   );
 }
 
-class AutocompleteAddressLoaded extends MapState {
-
-  final AutoCompleteAddressResponseModel autoCompleteAddressResponseModel;
-
-  const AutocompleteAddressLoaded(
-    this.autoCompleteAddressResponseModel
-  );
-}
-
 class Error extends MapState {
   final String? message;
 
