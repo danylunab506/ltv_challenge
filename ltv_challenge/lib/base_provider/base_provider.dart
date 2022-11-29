@@ -8,10 +8,11 @@ class BaseProvider{
 
   Future<Map<String, dynamic>> get({
     required String service,
+    String baseUrl = ApiConstants.baseUrl,
     Map<String, dynamic> parameters = const {},
   }) async {
 
-    final Uri uri = Uri.https(ApiConstants.baseUrl, service, parameters);
+    final Uri uri = Uri.https(baseUrl, service, parameters);
 
     late http.Response response;
     try {
@@ -22,4 +23,20 @@ class BaseProvider{
     }
   }
 
+  Future<List<Map<String, dynamic>>> getLocationIQAutoComplete({
+    Map<String, dynamic> parameters = const {},
+  }) async {
+
+    final Uri uri = Uri.https(ApiConstants.baseLocationIQApi, ApiConstants.locationIQAutocompleteService, parameters);
+    late http.Response response;
+    try {
+      response = await _httpClient.get(uri);
+      String decodedBody = utf8.decode(response.bodyBytes);
+      List<Map<String, dynamic>> mapsList = (jsonDecode(decodedBody) as List<dynamic>).cast<Map<String, dynamic>>();
+      
+      return mapsList;
+    }  catch (error) {
+      return [];
+    }
+  }
 }

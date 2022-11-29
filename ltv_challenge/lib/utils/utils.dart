@@ -4,6 +4,18 @@ import 'package:geolocator/geolocator.dart';
 
 String checkString(dynamic value) => value == null ? "" : value.toString();
 
+double checkDouble(dynamic value) {
+  if (value == null) {
+    return 0.0;
+  } else if (value is String) {
+    return double.tryParse(value)!.toDouble();
+  } else if (value is int) {
+    return 0.0 + value;
+  } else {
+    return value;
+  }
+}
+
 List<dynamic> checkList(dynamic value) {
   if (value != null && value is List) {
     return value;
