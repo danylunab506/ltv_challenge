@@ -22,6 +22,7 @@ class _MapWidgetState extends State<MapWidget> {
   Set<Marker> _markers = Set();
   GoogleMapController? mapController;
   final double _zoom = 11.0;
+  final int _maxMarkersToShow = 5;
 
   @override
   void initState() {
@@ -97,7 +98,16 @@ class _MapWidgetState extends State<MapWidget> {
     required List<PlaceResultModel> places
   }){
     _markers.clear();
-    for (PlaceResultModel place in places) {
+    if(places.isEmpty){
+      showAlert(
+        context: context, 
+        message: "No records found. Please type a new address"
+      );
+      return;
+    }
+
+    for (var i = 0; i < _maxMarkersToShow && i < places.length; i++) {
+      PlaceResultModel place = places[i];
       Marker placeMarker = Marker(
         markerId: MarkerId(place.osmId.toString()),
         infoWindow: InfoWindow(
@@ -108,6 +118,7 @@ class _MapWidgetState extends State<MapWidget> {
       );
       _markers.add(placeMarker);
     }
+
     if(places.isNotEmpty){
       LatLng newlatlang =  LatLng(checkDouble(places[0].lat), checkDouble(places[0].lon));
       mapController?.animateCamera( 
@@ -116,8 +127,7 @@ class _MapWidgetState extends State<MapWidget> {
         )
       );
     }
-    setState(() {
-    });
+    setState(() {});
   }
 
 }
