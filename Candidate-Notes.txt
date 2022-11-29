@@ -1,6 +1,8 @@
 
 - This challenge was tested on physical iOS and Android devices 
 
+- For iOS version I signed the project using a certificate linked to my current company and app. Please ignore this if you see it. 
+
 - An API Key is required to load Google maps. My personal api key is used for that. I decided to keep it on the project in order to make easier 
 the review process. 
 You can find the Api Key on:
